@@ -1,0 +1,67 @@
+<html>
+    <style type="text/css">
+        @media only screen and (max-width: 480px) {
+            table {
+                font-size: 16px !important;
+            }
+
+            #footer {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <table align="center" style="width: 100%; max-width: 600px; table-layout: fixed;">
+        <tr><td style="padding: 0 10px 20px">
+            <div style="background-color: #92151a; display: flex;">
+                <img style="margin: auto;" src="https://cssawisc.org/media/home/Logo-02.gif">
+            </div>
+        </td></tr>
+        <tr><td style="padding: 0 10px 20px">
+            <strong><h3>Hi!</h3></strong>
+        </td></tr>
+        <tr><td style="padding: 0 10px 10px">
+            欢迎观看由CSSA举办的2021牛年春节联欢晚会！下方的链接是属于您的抽奖个人链接，所有中奖、确认信息都将在这个链接内完成。请您点击以下链接获取奖券号码，并妥善保存！
+        </td></tr>
+
+        {{#isScavengerHunt}}
+        <tr><td style="padding: 0 10px 10px">
+            同时我们也感谢您参与了Scavenger Hunt线下活动。您的Scavenger Hunt成绩已经统计在个人链接内了，点击奖券码左边或右边的转换按钮即可查看。
+        </td></tr>
+        {{/isScavengerHunt}}
+        
+        <tr><td style="padding: 0 10px 20px; word-break: break-all">
+            <strong><a href={{url}}>{{url}}</a></strong>
+           
+        </td></tr>
+
+        <tr><td style="padding: 10px 10px 20px">
+            <h3>祝您手气爆棚，牛年快乐！</h3>
+        </td></tr>
+
+        <tr><td style="padding: 0 10px">
+            <table align="center">
+                <tr>
+                    <td>
+                        <a href="https://www.facebook.com/cssaatuwmadison">
+                            <img src="https://marketing-image-production.s3.amazonaws.com/uploads/acaa8cc636e21ce25adf1097cff9c16ff96d5921442dcff3758e5a4bad582b9e69a040716a1ce8fbdb122ca0bdf6b5878f62980ce9cebcc65811a48f708d71df.png" style="width:24px !important; height:24px !important">
+                        </a>
+                    </td>
+                    <td style="margin: 5px"></td>
+                    <td>
+                        <a href="https://www.instagram.com/cssa_at_uwmadison">
+                            <img src="https://marketing-image-production.s3.amazonaws.com/uploads/d0124c84901593fe9be521955bd7b039c65b1c0b2da9ef1268e6cec5c3adec7b94434304234eed9e1f0013f8964173b738f1b74a39b128a21302427099d0141c.png" style="width:24px !important; height:24px !important">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td></tr>
+        <tr><td style="padding: 0 10px;">
+            <table id="footer" align="center" style="font-size: small; text-align: center">
+                <tr><td><footer>威斯康辛大学中国学生学者联合会</footer></td></tr>
+                <tr><td><footer>CSSA at UW-Madison</footer></td></tr>
+                <tr><td><footer><a href="https://cssawisc.org">网站</a></footer></td></tr>
+            </table>
+        </td></tr>
+    </table>
+</html>

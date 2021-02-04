@@ -3,6 +3,12 @@
 const router = require('express').Router();
 const { User } = require('./database');
 const { encode, decode } = require('./helper');
+const fs = require('fs');
+const path = require('path');
+const mailgun = require('./mailgun');
+const mustache = require('mustache');
+const EMAIL_TEMPLATE = fs.readFileSync(path.join(__dirname, '../templates/signup.html'), 'utf-8');
+const { homeURL } = require('./settings.json');
 
 
 // Signs up a user
@@ -21,9 +27,19 @@ router.post('/signup', async (req, res) => {
     }
 
     // TODO: send email here
+    const emailContent = mustache.render(EMAIL_TEMPLATE, {
+        url: `${homeURL}/user/${encode(email)}`,
+        isScavengerHunt: user.isScavengerHunt
+    });
 
-    const hash = encode(email);
-    console.log(hash);
+    await mailgun.send({
+        subject: 'CSSA牛年春晚抽奖链接',
+        to: email,
+        html: emailContent
+    });
+
+    // const hash = encode(email);
+    // console.log(hash);
     return res.json({ submitted: true });
 });
 

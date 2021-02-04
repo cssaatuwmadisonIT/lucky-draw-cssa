@@ -278,7 +278,7 @@ router.get('/callback', (req, res) => {
     } else if (urlArgs.error) {
         log('Login error: %s (%s)', urlArgs.error, ssn.ip);
         ssn.destroy();
-        res.redirect('/?error=' + urlArgs.error);
+        res.redirect('/admin?error=' + urlArgs.error);
     }
 
     // Exchanges for information
@@ -286,11 +286,11 @@ router.get('/callback', (req, res) => {
 
         // Gets access token
         getAccessToken(req).then(getUserEmail).then(() => {
-            res.redirect('/');
+            res.redirect('/admin');
         }).catch(err => {
             console.log(err);
             log(err.error);
-            res.redirect('/?error=' + err.error);
+            res.redirect('/admin?error=' + err.error);
         });
     }
 });
@@ -298,11 +298,11 @@ router.get('/callback', (req, res) => {
 // Admin logout endpoint
 router.get('/logout', (req, res) => {
     const ssn = req.session;
-    if (!ssn.loggedIn) res.redirect('/');
+    if (!ssn.loggedIn) res.redirect('/admin');
     else {
         log('Logged out from admin portal: %s <%s> (%s)', ssn.adminName, ssn.adminEmail, ssn.ip);
         if (ssn.destroy) ssn.destroy();
-        res.redirect('/');
+        res.redirect('/admin');
     }
 });
 
