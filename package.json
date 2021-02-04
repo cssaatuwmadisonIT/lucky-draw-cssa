@@ -1,0 +1,43 @@
+{
+  "name": "lucky-draw",
+  "version": "0.0.1",
+  "description": "----",
+  "main": "app.js",
+  "dependencies": {
+    "addresser": "^1.1.19",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mailgun-js": "^0.22.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.7",
+    "mustache": "^4.0.1",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "socket.io": "^2.3.0",
+    "usps-webtools-promise": "^2.1.2"
+  },
+  "devDependencies": {
+    "address-validator": "^0.2.3",
+    "csv-parser": "^2.3.2",
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "postinstall": "cd client && npm install",
+    "server": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryxue1999/lucky-draw.git"
+  },
+  "author": "Harry Xue",
+  "license": "AGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/harryxue1999/lucky-draw/issues"
+  },
+  "homepage": "https://github.com/harryxue1999/lucky-draw#readme",
+  "private": true
+}

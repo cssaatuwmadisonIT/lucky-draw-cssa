@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.app-logo {
+  height: 35px; 
+  padding-right: 16px;
+}
+
+@media only screen and (max-width: 480px) {
+  .app-logo {
+    height: 30px;
+  }
+}
+
+.MuiTableContainer-root td,
+.MuiTableContainer-root th {
+  font-size: 0.8rem;
+}
