@@ -13,7 +13,7 @@ const { homeURL } = require('./settings.json');
 
 // Signs up a user
 router.post('/signup', async (req, res) => {
-    const email = req.body.email.toLowerCase();
+    const email = req.body.email.toLowerCase().trim();
     const eligible = /wisc\.edu$/.test(email);
 
     let user = await User.findOne({ email });
