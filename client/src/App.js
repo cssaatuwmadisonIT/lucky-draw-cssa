@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { observer } from 'mobx-react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import backgroundImage from './balloon-cow.jpg';
 import AdminStore from './stores/AdminStore';
 import { AdminPage, RootPage, UserPage } from './pages';
@@ -109,7 +109,7 @@ function App() {
 const bodyStyle = theme => ({
   "@global": {
     body: {
-      background: `url(${backgroundImage}) no-repeat bottom right fixed`,
+      background: `url(${backgroundImage}) no-repeat bottom left fixed`,
       // backgroundRepeat: `no-repeat`,
       // backgroundLocation: 'cover'
       backgroundSize: 'cover'
